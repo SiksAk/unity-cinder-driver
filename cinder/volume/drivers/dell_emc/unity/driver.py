@@ -119,7 +119,7 @@ class UnityDriver(driver.TransferVD,
         """Make sure volume is exported."""
         pass
 
-    @zm_utils.AddFCZone
+    @zm_utils.add_fc_zone
     def initialize_connection(self, volume, connector):
         """Initializes the connection and returns connection info.
 
@@ -159,7 +159,7 @@ class UnityDriver(driver.TransferVD,
         """
         return self.adapter.initialize_connection(volume, connector)
 
-    @zm_utils.RemoveFCZone
+    @zm_utils.remove_fc_zone
     def terminate_connection(self, volume, connector, **kwargs):
         """Disallow connection from connector."""
         return self.adapter.terminate_connection(volume, connector)
